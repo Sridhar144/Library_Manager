@@ -165,8 +165,8 @@ def checks(name, password):
         conn = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="Sridhar4!",
-            database="Library"
+            password=os.getenv('DB_PASSWORD'),
+            database=os.getenv('DB_NAME')
         )
         if conn.is_connected():
             cur = conn.cursor()
@@ -196,8 +196,8 @@ def check(name, password):
         conn = mysql.connector.connect(
             host="localhost",
             user="root",
-            password="Sridhar4!",
-            database="Library"
+            password=os.getenv('DB_PASSWORD'),
+            database=os.getenv('DB_NAME')
         )
         if conn.is_connected():
             cur = conn.cursor()
